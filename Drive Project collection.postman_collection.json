@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "97919947-588c-4abf-864a-ab04e786f05e",
+		"name": "Drive Project collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35138646"
+	},
+	"item": [
+		{
+			"name": "Download Files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer \"ya29.a0AeXRPp7Jk_rLkNvj1zJcPgXMK9jEHqNu0WrCfKR9rgdYhe5bUy5G0a7DifgnnJZ_LcvWk3eDqDM9FySWjbgjizKgHmap1o26S1liYA9r1k8LBSxXO0Dl5Il-tiORGZULwZhHFXvo6vBM0fM0eYRJ-CipECM1B8R3I1MD-PkHaCgYKARgSARESFQHGX2MifmOD4xkMqaGgNSLdmOKjTw0175\"",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://driveproject-a525e7ef0526.herokuapp.com/drive/download-file/?fileId=1X9WCxTFzbTdMZcxzNpbskeWybuTT3i1Q",
+					"protocol": "https",
+					"host": [
+						"driveproject-a525e7ef0526",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"drive",
+						"download-file",
+						""
+					],
+					"query": [
+						{
+							"key": "fileId",
+							"value": "1X9WCxTFzbTdMZcxzNpbskeWybuTT3i1Q"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer \"ya29.a0AeXRPp7Jk_rLkNvj1zJcPgXMK9jEHqNu0WrCfKR9rgdYhe5bUy5G0a7DifgnnJZ_LcvWk3eDqDM9FySWjbgjizKgHmap1o26S1liYA9r1k8LBSxXO0Dl5Il-tiORGZULwZhHFXvo6vBM0fM0eYRJ-CipECM1B8R3I1MD-PkHaCgYKARgSARESFQHGX2MifmOD4xkMqaGgNSLdmOKjTw0175\"",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://driveproject-a525e7ef0526.herokuapp.com/drive/list-file/?query=test&mimeType=application/pdf",
+					"protocol": "https",
+					"host": [
+						"driveproject-a525e7ef0526",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"drive",
+						"list-file",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "test"
+						},
+						{
+							"key": "mimeType",
+							"value": "application/pdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer \"ya29.a0AeXRPp7Jk_rLkNvj1zJcPgXMK9jEHqNu0WrCfKR9rgdYhe5bUy5G0a7DifgnnJZ_LcvWk3eDqDM9FySWjbgjizKgHmap1o26S1liYA9r1k8LBSxXO0Dl5Il-tiORGZULwZhHFXvo6vBM0fM0eYRJ-CipECM1B8R3I1MD-PkHaCgYKARgSARESFQHGX2MifmOD4xkMqaGgNSLdmOKjTw0175\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File1",
+							"type": "file",
+							"src": "/Users/admin/Downloads/testinggggg.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://driveproject-a525e7ef0526.herokuapp.com/drive/upload/",
+					"protocol": "https",
+					"host": [
+						"driveproject-a525e7ef0526",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"drive",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://driveproject-a525e7ef0526.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"key": "FIle ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Query",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Mime Type",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
