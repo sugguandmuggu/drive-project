@@ -91,7 +91,7 @@ The `chat_app` provides real-time chat functionality within the DriveProject. Be
 ### Usage
 
 1. **Access the chat app**:
-    - Open your browser and navigate to `https://driveproject-a525e7ef0526.herokuapp.com/chat/%3Croom-name%3E`.
+    - Open your browser and navigate to `https://driveproject-a525e7ef0526.herokuapp.com/chat/\<room-name\>`.
 2. **Send and receive messages**:
     - Once in a chat room, you can send and receive messages in real-time.
 
