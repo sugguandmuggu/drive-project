@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chat</title>
+</head>
+<body>
+    <h1>Chat Room: {{ room_name }}</h1>
+    <div id="chat-log"></div>
+    <input id="chat-message-input" type="text">
+    <button id="chat-message-submit">Send</button>
+
+    <script>
+        const roomName = "{{ room_name }}";
+        // const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+        // const chatSocket = new WebSocket(protocol + window.location.hostname + ":9000/ws/chat/" + roomName + "/");
+
+        const port = window.location.port ? `:${parseInt(window.location.port)}` : "";
+        const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+        const chatSocket = new WebSocket(protocol + window.location.hostname + port + "/ws/chat/" + roomName + "/");
+
+
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector("#chat-log").innerHTML += "<p>" + data.message + "</p>";
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error("WebSocket closed.");
+        };
+
+        document.querySelector("#chat-message-submit").onclick = function () {
+        const messageInput = document.querySelector("#chat-message-input");
+        const message = messageInput.value.trim();
+
+        if (chatSocket.readyState === WebSocket.OPEN) {  // ✅ Check if socket is open
+            chatSocket.send(JSON.stringify({ 'message': message }));
+            messageInput.value = "";
+            } 
+        else {
+            console.error("WebSocket is not open. ReadyState:", chatSocket.readyState);
+            }
+        };
+    </script>
+</body>
+</html>
