@@ -7,6 +7,7 @@
   - [Drive Upload](#drive-upload)
   - [Drive Download](#drive-download)
   - [Drive List Files](#drive-list-files)
+- [Chat App](#chat-app)
  
 ## Landing Page
 
@@ -82,6 +83,19 @@
 3. Set the URL to `https://driveproject-a525e7ef0526.herokuapp.com/drive/download-file/`.
 4. Add a query parameter `file_id` with the ID of the file you want to download.
 5. Click `Send`.
+
+## Chat App
+
+The `chat_app` provides real-time chat functionality within the DriveProject. Below are the details on how to use the chat app.
+
+### Usage
+
+1. **Access the chat app**:
+    - Open your browser and navigate to `https://driveproject-a525e7ef0526.herokuapp.com/chat/%3Croom-name%3E`.
+2. **Send and receive messages**:
+    - Once in a chat room, you can send and receive messages in real-time.
+
+
 
 **Author**: Saksham Jaiswal  
 **Email**: jaiswalsaksham32@gmail.com
